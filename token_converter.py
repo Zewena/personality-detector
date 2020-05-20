@@ -8,7 +8,7 @@ class TokenConverter:
 
         preprocessed_data[self.text_attr] = preprocessed_data[self.text_attr].apply(self.convert)
 
-        return preprocessed_data, self.tokenizer.vocab
+        return preprocessed_data
 
     def convert(self, sentence):
         return self.tokenizer.tokenize(sentence)

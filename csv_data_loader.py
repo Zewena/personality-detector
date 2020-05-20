@@ -8,6 +8,6 @@ class CSVDataLoader:
         self.trait_attrs = trait_attrs
 
     def load_data(self):
-        data = pd.read_csv(filepath_or_buffer=self.file_path)
+        df = pd.read_csv(filepath_or_buffer=self.file_path)
 
-        return data[[self.text_attr, *self.trait_attrs]]
+        return df[[self.text_attr, *self.trait_attrs]]
