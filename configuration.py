@@ -1,15 +1,8 @@
-dims = ['cAGR', 'cCON', 'cEXT', 'cOPN', 'cNEU']
+EMB_DIM = 200
+CNN_FILTERS = 100
+DNN_UNITS = 256
+OUTPUT_CLASSES = 2
 
-FILENAME = 'data/essays2007.csv'
-column_to_read = 'text'
+DROPOUT_RATE = 0.2
 
-MAX_NUM_WORDS = 10000
-MAX_SEQ_LENGTH = 400
-MAX_SENTS = 30
-EMBEDDING_DIM = 100
-
-
-class Params:
-    n_epoch = 50
-    batch_size = 32
-    dropout_rate = 0.5
+NB_EPOCHS = 20
