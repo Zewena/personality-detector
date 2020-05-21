@@ -8,4 +8,8 @@ if __name__ == "__main__":
                       dnn_units=config.DNN_UNITS,
                       dropout_rate=config.DROPOUT_RATE)
 
-    weights = model.load_weights(filepath='checkpoint/text-model.h5')
+    model.compile(loss="binary_crossentropy",
+                  optimizer="adam",
+                  metrics=["accuracy"])
+
+    weights = model.load_weights(filepath='checkpoint/text.model.hdf5')

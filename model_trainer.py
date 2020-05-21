@@ -11,7 +11,7 @@ class ModelTrainer:
     def __init__(self):
         self.logger = logging.getLogger()
         self.model = None
-        self.path_to_save_model = "checkpoint/text-model.h5"
+        self.path_to_save_model = "checkpoint/text.model.hdf5"
 
     def get_model(self, vocabulary_size):
         model = TextModel(vocabulary_size=vocabulary_size,
@@ -37,7 +37,8 @@ class ModelTrainer:
         checkpoint = ModelCheckpoint(
             filepath=self.path_to_save_model,
             verbose=1,
-            save_best_only=True)
+            save_best_only=True,
+            save_weights_only=True)
 
         callbacks_list = [history, checkpoint]
 
